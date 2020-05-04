@@ -21,8 +21,10 @@ def apply_coupons(cart, coupons)
         if num_uncouponed < 1  
           temp[:item] = "#{cart_item[:item]} W/COUPON"
           temp[:price] = price_per_unit
-          cart_item[:count] = 0 # I kept failing this test becasue I ignored this line.  I don't understand the purpose of it.
-          new_arr << temp       # We are not changing the original array??
+          #cart_item[:count] = 0 # I kept failing this test becasue I ignored this line.  I don't understand the purpose of it.
+          new_arr << temp   # We are not changing the original array
+          cart_item[:count] = 0 
+          new_arr << cart_item
         else
           temp2 = Marshal.load(Marshal.dump(cart_item))
           temp[:item] = "#{cart_item[:item]} W/COUPON"
