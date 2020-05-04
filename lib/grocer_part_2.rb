@@ -22,7 +22,7 @@ def apply_coupons(cart, coupons)
           temp[:item] = "#{cart_item[:item]} W/COUPON"
           temp[:price] = price_per_unit
           new_arr << temp   
-          cart_item[:count] = 0 #keeping original with count 0 
+          cart_item[:count] = 0 #keeping original but setting count 0 
           new_arr << cart_item
         else
           temp2 = Marshal.load(Marshal.dump(cart_item))
